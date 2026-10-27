@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DataPilot helps you analyze data, discover insights, and understand data quality.">
+  <title>DataPilot | Understand Your Data</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="navbar">
+    <a href="#" class="logo">
+      <span class="logo-icon">D</span>
+      DataPilot
+    </a>
+
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+    </nav>
+
+    <a href="#upload" class="nav-button">Explore</a>
+  </header>
+
+  <main>
+    <!-- Hero section -->
+    <section class="hero" id="about">
+      <div class="hero-content">
+        <span class="eyebrow">YOUR DATA, YOUR ADVANTAGE</span>
+
+        <h1>Turn your data into <span>insights.</span></h1>
+
+        <p>
+          Analyze your data, discover useful patterns,
+          and make smarter decisions with DataPilot.
+        </p>
+
+        <button id="startButton" type="button">Get Started →</button>
+
+        <p id="status" class="status" aria-live="polite">
+          Your data journey starts here.
+        </p>
+      </div>
+
+      <div class="preview">
+        <div class="preview-header">
+          <div>
+            <span class="muted">YOUR WORKSPACE</span>
+            <h2>Analytics Overview</h2>
+          </div>
+          <span class="live-dot">● Ready</span>
+        </div>
+
+        <div class="stats">
+          <article class="stat-card">
+            <span>Total Records</span>
+            <strong>1,248</strong>
+            <small>Sample data</small>
+          </article>
+
+          <article class="stat-card">
+            <span>Data Quality</span>
+            <strong>98.4%</strong>
+            <small>Demo metric</small>
+          </article>
+        </div>
+
+        <div class="chart-card">
+          <h3>Data activity</h3>
+
+          <div class="bars" aria-label="Illustrative bar chart">
+            <i style="--h:35%"></i>
+            <i style="--h:55%"></i>
+            <i style="--h:42%"></i>
+            <i style="--h:76%"></i>
+            <i style="--h:60%"></i>
+            <i style="--h:90%"></i>
+            <i style="--h:70%"></i>
+          </div>
+
+          <div class="chart-labels">
+            <span>Jan</span>
+            <span>Feb</span>
+            <span>Mar</span>
+            <span>Apr</span>
+            <span>May</span>
+            <span>Jun</span>
+            <span>Jul</span>
+          </div>
+        </div>
+
+        <p class="demo-note">
+          Preview only · Sample values, not real analysis
+        </p>
+      </div>
+    </section>
+
+    <!-- CSV upload section -->
+    <section class="data-section" id="upload">
+      <span class="eyebrow">TRY IT YOURSELF</span>
+      <h2>Analyze your own data</h2>
+
+      <p class="upload-description">
+        Choose a CSV file to preview your data and generate analytics.
+      </p>
+
+      <label class="upload-button" for="csvFile">
+        Choose CSV File
+      </label>
+
+      <input
+        type="file"
+        id="csvFile"
+        accept=".csv,text/csv"
+      >
+
+      <p id="fileStatus" aria-live="polite">
+        No file selected yet.
+      </p>
+
+      <div id="dataSummary" class="data-summary"></div>
+
+      <!-- Analytics dashboard -->
+      <section
+        class="analytics-dashboard"
+        id="analytics-dashboard"
+        hidden
+      >
+        <div class="dashboard-heading">
+          <div>
+            <p class="eyebrow">YOUR DATA, EXPLAINED</p>
+            <h2>Analytics Dashboard</h2>
+            <p>Insights generated from your CSV file.</p>
+          </div>
+        </div>
+
+        <div class="metrics-grid">
+          <article class="metric-card">
+            <span>Total Sales</span>
+            <h3 id="totalSales">—</h3>
+            <p>Sum of sales</p>
+          </article>
+
+          <article class="metric-card">
+            <span>Average Sales</span>
+            <h3 id="averageSales">—</h3>
+            <p>Average per record</p>
+          </article>
+
+          <article class="metric-card">
+            <span>Top Product</span>
+            <h3 id="topProduct">—</h3>
+            <p id="topProductSales">Best-performing product</p>
+          </article>
+
+          <article class="metric-card">
+            <span>Data Quality</span>
+            <h3 id="dataQuality">—</h3>
+            <p id="qualityDetails">Missing and duplicate data</p>
+          </article>
+        </div>
+
+        <!-- Charts -->
+        <div class="chart-card">
+          <h3>Sales by Product</h3>
+          <p>Compare total sales for each product.</p>
+          <canvas id="salesBarChart"></canvas>
+        </div>
+
+        <div class="chart-card">
+          <h3>Sales Over Time</h3>
+          <p>Track how sales change over time.</p>
+          <canvas id="salesLineChart"></canvas>
+        </div>
+      </section>
+
+      <!-- CSV data table -->
+      <div id="tableContainer" class="table-wrapper"></div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+      <span class="eyebrow">BUILT FOR CLARITY</span>
+      <h2>Everything starts with data.</h2>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <span class="feature-icon">↥</span>
+          <h3>Upload data</h3>
+          <p>Upload a CSV file and preview your records.</p>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-icon">▥</span>
+          <h3>Explore insights</h3>
+          <p>Understand your data through statistics and charts.</p>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-icon">✓</span>
+          <h3>Check data quality</h3>
+          <p>Identify missing values and duplicate records.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#" class="logo">
+      <span class="logo-icon">D</span>
+      DataPilot
+    </a>
+    <p>Built as a learning project by Ismail.</p>
+  </footer>
+
+  <!-- Load Chart.js before script.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
